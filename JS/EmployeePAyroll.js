@@ -27,7 +27,7 @@ const textError = document.querySelector('.text-error');
 
   function save(){
     try {
-        let employeePayroll = createAddressBookData();
+        let employeePayroll = createEmployeePayroll();
      //   alert(employeePayroll.toString());
     }catch (e) {
         textError.textContent = "Name Is Incorrect" ;
@@ -36,7 +36,7 @@ const textError = document.querySelector('.text-error');
 
 
 
-  const createAddressBookData = () => {
+  const createEmployeePayroll = () => {
     let employeePayroll = new EmployeePayroll();
     try{
         employeePayroll.name =  document.querySelector('#name').value;
