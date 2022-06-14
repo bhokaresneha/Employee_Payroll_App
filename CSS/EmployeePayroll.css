@@ -82,3 +82,14 @@ label{
     border-radius: 4px;
     resize: vertical;
 }
+
+select { 
+    padding: 12px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    resize: vertical;
+    letter-spacing: 0px; 
+    font: normal normal normal 16px Roboto;
+    color: #425151;
+    background-color: transparent;
+}
