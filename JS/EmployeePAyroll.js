@@ -23,20 +23,20 @@ const salary = document.querySelector('#salary');
 //     const results = document.querySelector('.results pre ');
 //     results.innerText = JSON.stringify(formJSON, null, 2);
 //   }
+
 const textError = document.querySelector('.text-error');
 
   function save(){
     try {
-        let employeePayroll = createAddressBookData();
-     //   alert(employeePayroll.toString());
+        let employeePayrollData = createPayrollData();
+        alert(employeePayrollData.toString());
+
     }catch (e) {
-        textError.textContent = "Name Is Incorrect" ;
+
     }
 }
 
-
-
-  const createAddressBookData = () => {
+  const createPayrollData = () => {
     let employeePayroll = new EmployeePayroll();
     try{
         employeePayroll.name =  document.querySelector('#name').value;
@@ -56,9 +56,15 @@ const textError = document.querySelector('.text-error');
     set name(name){ 
         let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
         if(nameRegex.test(name))
-            this._name = name;
+        {
+            this._name=name;
+            alert(employeePayroll.toString());
+
+        }
         else
+        {
         throw('Name is Incorrect!'); 
+        }
     }
     get salary(){ return this._salary; }
     set salary(salary){ 
@@ -66,7 +72,7 @@ const textError = document.querySelector('.text-error');
     }
     toString(){
                         
-        return "Name :  "+this.name,"\nSalary : "+this.salary;
+        return "Name"+this.name,"Salary"+this.salary;
 
     }
 }
